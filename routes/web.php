@@ -13,11 +13,6 @@
 
 
 
-$stripe = App::make('auth.driver');
-
-dd($stripe);
-
-
 Route::get('/', 'PostsController@index')->name('home');
 Route::get('/home', 'PostsController@index');
 Route::get('/posts/create', 'PostsController@create');
