@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Mail\Welcome;
 use App\Http\Requests\RegistrationForm;
+use App\Http\Controllers\SessionsController;
 
 class RegistrationController extends Controller
 {
@@ -18,6 +19,9 @@ class RegistrationController extends Controller
     {
 
         $form->persist();
+
+        session('message', 'here is a default message');
+        session()->flash('message', 'thanks so much for signing up');
 
         return redirect()->home();
 
